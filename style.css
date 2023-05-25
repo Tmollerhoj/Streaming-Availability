@@ -1,0 +1,61 @@
+/* Added CSS outside of the Materialize CSS Framework */
+:root {
+    --dark-teal: #004d40;
+    --white: #e0f2f1
+}
+header {
+margin: 20px;
+}
+
+body {
+    background-color: var(--dark-teal); 
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    /*max-width: 50%;*/
+    
+}
+
+.homemadeH1 {
+    color: var(--white);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    max-width: 75%;
+    color: var(--white);
+}
+
+button {
+    font-size: 18px;
+    width: 125px;
+    height: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px transparent;
+    border-radius: 15px;
+}
+ .movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+
+.item-card {
+    flex: 1 1 200px;
+    margin: 10px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
+
+}
