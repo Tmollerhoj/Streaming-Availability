@@ -1,7 +1,36 @@
 /* Added CSS outside of the Materialize CSS Framework */
 :root {
     --dark-teal: #004d40;
+    --white: #e0f2f1
 }
+
 body {
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 50%;
     background-color: var(--dark-teal);
+}
+
+.homemadeH1 {
+    color: var(--white);
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    color: var(--white);
+}
+
+button {
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px transparent;
+    border-radius: 10px;
 }
