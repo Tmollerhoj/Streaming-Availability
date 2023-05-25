@@ -5,12 +5,24 @@
 }
 
 body {
+    /* display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 50%; */
+    background-color: var(--dark-teal);
+}
+
+.content {
     display: flex;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
-    max-width: 50%;
-    background-color: var(--dark-teal);
+    max-width: 100%;
+}
+
+.headerContainer {
+    padding-top: 250px
 }
 
 .homemadeH1 {
@@ -31,10 +43,15 @@ input {
 
 button {
     font-size: 18px;
+    color: var(--white);
     width: 125px;
     height: 35px;
     padding-left: 20px;
     padding-right: 20px;
     border: 1px transparent;
     border-radius: 15px;
+}
+
+main {
+    
 }
