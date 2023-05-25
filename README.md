@@ -33,4 +33,4 @@ Click [here](https://tmollerhoj.github.io/Streaming-Availability/) for the deplo
 
 ## License
 
-...
+MIT License
