@@ -1,0 +1,7 @@
+/* Added CSS outside of the Materialize CSS Framework */
+:root {
+    --dark-teal: #004d40;
+}
+body {
+    background-color: var(--dark-teal);
+}
