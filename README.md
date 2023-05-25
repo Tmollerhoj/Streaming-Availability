@@ -25,7 +25,7 @@ The deployed application should look something like this:
 
 <!-- ![Screenshot of the application.](link screenshot) -->
 
-Click [here](https://tmollerhoj.github.io/streaming-availability/) for the deployed application.
+Click [here](https://tmollerhoj.github.io/Streaming-Availability/) for the deployed application.
 
 ## Credits
 
