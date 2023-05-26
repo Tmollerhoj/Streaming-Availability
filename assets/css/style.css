@@ -10,12 +10,12 @@ margin: 20px;
 
 
 body {
-  background-color: var(--dark-teal); 
+    background-color: var(--dark-teal); 
     display: flex;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
-    max-width: 50%;
+    max-width: 75%;
     background-color: var(--dark-teal);
 
 }
@@ -37,6 +37,7 @@ input {
 }
 
 button {
+    color: var(--white);
     font-size: 18px;
     width: 125px;
     height: 35px;
