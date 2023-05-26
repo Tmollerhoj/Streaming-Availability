@@ -4,13 +4,20 @@
     --white: #e0f2f1
 }
 
+header {
+margin: 20px;
+}
+
+
 body {
+  background-color: var(--dark-teal); 
     display: flex;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
     max-width: 50%;
     background-color: var(--dark-teal);
+
 }
 
 .homemadeH1 {
@@ -37,4 +44,18 @@ button {
     padding-right: 20px;
     border: 1px transparent;
     border-radius: 15px;
+}
+
+ .movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+
+.item-card {
+    flex: 1 1 200px;
+    margin: 10px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
 }
