@@ -3,21 +3,21 @@
     --dark-teal: #004d40;
     --white: #e0f2f1
 }
-
 header {
 margin: 20px;
 }
 
-
 body {
-  background-color: var(--dark-teal); 
+    background-color: var(--dark-teal); 
+}
+
+.content {
     display: flex;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
-    max-width: 50%;
-    background-color: var(--dark-teal);
-
+    /*max-width: 50%;*/
+    
 }
 
 .homemadeH1 {
@@ -45,7 +45,6 @@ button {
     border: 1px transparent;
     border-radius: 15px;
 }
-
  .movies {
     display: flex;
     flex-wrap: wrap;
@@ -58,4 +57,5 @@ button {
     background-color: white;
     border: 3px solid black;
     border-radius: 5px;
+
 }
