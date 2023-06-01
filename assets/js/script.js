@@ -23,7 +23,7 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + s
 		const poster = item.posterURLs[92];
 		const rating = item.imdbRating;
 		const id = item.imdbId
-		const movie = `<div class = "item-card"><img src="${poster}"> <h4>${name}</h4> <h4>${rating}</h4><a href = "https://www.imdb.com/title/${id}" target = "_blank">See on IMDB</a></div>`
+		const movie = `<div class = "item-card"><img src="${poster}"> <h4>${name}</h4> <h6>${rating}</h6><a href = "https://www.imdb.com/title/${id}" target = "_blank">See on IMDB</a></div>`
 
 	 	document.querySelector('.movies').innerHTML += movie;
 
