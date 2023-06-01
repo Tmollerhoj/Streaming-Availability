@@ -1,27 +1,43 @@
 /* Added CSS outside of the Materialize CSS Framework */
 :root {
     --dark-teal: #004d40;
-    --white: #e0f2f1;
-    --yellow: #ffe9bb;
-    --light-teal: #00bfd0;
-    --transparent: #ffffff00;
+    --white: #e0f2f1
 }
 
 header {
 margin: 20px;
 }
 
+
 body {
-    background-color: var(--dark-teal); 
+<<<<<<< HEAD:style.css
+    /* display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 50%; */
+    background-color: var(--dark-teal);
 }
 
 .content {
+=======
+  background-color: var(--dark-teal); 
+>>>>>>> 62d030e30d1c9eb047390aac0437e266ae0153fb:assets/css/style.css
     display: flex;
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
-    max-width: 75%;
+<<<<<<< HEAD:style.css
+    max-width: 100%;
+}
+
+.headerContainer {
+    padding-top: 250px
+=======
+    max-width: 50%;
     background-color: var(--dark-teal);
+
+>>>>>>> 62d030e30d1c9eb047390aac0437e266ae0153fb:assets/css/style.css
 }
 
 .homemadeH1 {
@@ -41,8 +57,8 @@ input {
 }
 
 button {
-    color: var(--white);
     font-size: 18px;
+    color: var(--white);
     width: 125px;
     height: 35px;
     padding-left: 20px;
@@ -50,6 +66,11 @@ button {
     border: 1px transparent;
     border-radius: 15px;
 }
+
+<<<<<<< HEAD:style.css
+main {
+    
+=======
  .movies {
     display: flex;
     flex-wrap: wrap;
@@ -58,30 +79,9 @@ button {
 
 .item-card {
     flex: 1 1 200px;
-    margin: 20px;
-    color: var(--white);
-    /* background-color: var(--transparent); */
-    /* border: 3px solid black; */
-    /* border-radius: 5px; */
-}
-
-.item-card img {
-    transform: rotate(-10deg);
-}
-
-h6 {
-    color: var(--white);
-}
-
-h6::before {
-    color: var(--yellow);
-    content: "★ ";
-}
-
-h6::after {
-    content: "/100";
-}
-
-a {
-    color: var(--light-teal);
+    margin: 10px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 5px;
+>>>>>>> 62d030e30d1c9eb047390aac0437e266ae0153fb:assets/css/style.css
 }
