@@ -76,5 +76,5 @@ function searchHistory(event) {
 	fetchMovie(movieName)
 }
 
-fetchMovie();
+
 searchBarEl.addEventListener('submit', SearchFormSubmit);
