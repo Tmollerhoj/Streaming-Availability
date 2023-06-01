@@ -1,5 +1,5 @@
 var searchBarEl = document.querySelector('#search-bar');
-function fetchMovie() { };
+var itemCard = document.querySelector('.item-card')
 function SearchFormSubmit(event) {
 	event.preventDefault();
 
@@ -7,11 +7,10 @@ function SearchFormSubmit(event) {
 
 	var search = document.querySelector('#search-input').value;
 
-
 	fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + search + '&country=us&output_language=en', {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '9d90a6c0a4mshd6e2219c374ff2cp1212a2jsnf0f6d6f9d738',
+			'X-RapidAPI-Key': 'd5755c2d63mshc1446e0e8597a11p15ced3jsn470832db8273',
 			'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
 		}
 	})
@@ -25,9 +24,9 @@ function SearchFormSubmit(event) {
 			document.querySelector('.movies').innerHTML = ''
 
 			var searchOption = `<option value=${search}">${search}</option>`
-			
+
 			document.querySelector('#movie-select').innerHTML += searchOption;
-addToLocalStorage(search)
+			addToLocalStorage(search)
 
 			list.map((item) => {
 				const name = item.title;
