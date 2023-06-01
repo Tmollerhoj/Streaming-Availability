@@ -25,35 +25,44 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + s
 		const rating = item.imdbRating;
 		const id = item.imdbId
 		const stream = item.streamingInfo.us;
-		var services = "";
 		var icons = "";
 		for (var key in stream) {
-			console.log(key)
+
 			if (key == "apple") {
-				let appleText = "<input type='button'>Apple</input>"
-				icons = services.concat(appleText);
+				let appleLink = item.streamingInfo.us.apple[0].link
+				let appleText = `<a href = "${appleLink}"> <button class="cyan darken-3">Apple</button></a>`
+				icons += appleText;
+				
 			} 
 			else if (key == "hbo") {
-				let hboText = "<input type='button'>HBO</input>"
-				icons = services.concat(hboText);
+				let hboLink = item.streamingInfo.us.hbo[0].link
+				let hboText = `<a href = "${hboLink}"> <button class="cyan darken-3">MAX</button></a>`
+				icons += hboText;
+				
 			}
 			else if (key == "hulu"){
-				let huluText = "<input type='button'>Hulu</input>"
-				icons = services.concat(huluText);
+				let huluLink = item.streamingInfo.us.hulu[0].link
+				let huluText = `<a href = "${huluLink}"> <button class="cyan darken-3">Hulu</button></a>`
+				icons += huluText;
+				
 			}
 			else if (key == "prime"){
-				let primeText = "<input type='button'>Prime</input>"
-				icons = services.concat(primeText);
+				let primeLink = item.streamingInfo.us.prime[0].link
+				let primeText = `<a href = "${primeLink}"> <button class="cyan darken-3">Prime</button></a>`
+				icons += primeText;
+				
 			}
 			else if (key == "netflix"){
-				let netflixText = "<input type='button'>Netflix</input>"
-				icons = services.concat(netflixText);
+				let netflixLink = item.streamingInfo.us.netflix[0].link
+				let netflixText = `<a href = "${netflixLink}"> <button class="cyan darken-3">Netflix</button></a>`
+				icons += netflixText;
+				
 			}
 			else {
-				console.log(icons)
 			}
-			console.log(icons)
+
 		}
+		
 		var movie = `<div class = "item-card"><img src="${poster}"> <h4>${name}</h4> <h4>${rating}</h4><a href = "https://www.imdb.com/title/${id}" target = "_blank">See on IMDB</a> <div>${icons}</div> </div>`
 
 	 	document.querySelector('.movies').innerHTML += movie;
