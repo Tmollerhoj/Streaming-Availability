@@ -1,8 +1,12 @@
 /* Added CSS outside of the Materialize CSS Framework */
 :root {
     --dark-teal: #004d40;
-    --white: #e0f2f1
+    --white: #e0f2f1;
+    --yellow: #ffe9bb;
+    --light-teal: #00bfd0;
+    --transparent: #ffffff00;
 }
+
 header {
 margin: 20px;
 }
@@ -16,8 +20,8 @@ body {
     justify-content: center;
     margin-right: auto;
     margin-left: auto;
-    /*max-width: 50%;*/
-
+    max-width: 75%;
+    background-color: var(--dark-teal);
 }
 
 .homemadeH1 {
@@ -37,6 +41,7 @@ input {
 }
 
 button {
+    color: var(--white);
     font-size: 18px;
     width: 125px;
     height: 35px;
@@ -53,9 +58,30 @@ button {
 
 .item-card {
     flex: 1 1 200px;
-    margin: 10px;
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 5px;
+    margin: 20px;
+    color: var(--white);
+    /* background-color: var(--transparent); */
+    /* border: 3px solid black; */
+    /* border-radius: 5px; */
+}
 
+.item-card img {
+    transform: rotate(-10deg);
+}
+
+h6 {
+    color: var(--white);
+}
+
+h6::before {
+    color: var(--yellow);
+    content: "★ ";
+}
+
+h6::after {
+    content: "/100";
+}
+
+a {
+    color: var(--light-teal);
 }
