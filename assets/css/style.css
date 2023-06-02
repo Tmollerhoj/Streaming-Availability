@@ -8,11 +8,19 @@
 }
 
 header {
-margin: 20px;
+    margin: 20px;
+}
+
+select {
+    display: block;
+}
+
+#history-list {
+    display: none;
 }
 
 body {
-    background-color: var(--dark-teal); 
+    background-color: var(--dark-teal);
 }
 
 .content {
@@ -50,11 +58,12 @@ button {
     border: 1px transparent;
     border-radius: 15px;
 }
- .movies {
+
+.movies {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
- }
+}
 
 .item-card {
     flex: 1 1 200px;
