@@ -11,6 +11,16 @@ header {
 margin: 20px;
 }
 
+
+select {
+    display: block;
+}
+
+#history-list {
+    display: none;
+}
+
+
 body {
     background-color: var(--dark-teal); 
 }
