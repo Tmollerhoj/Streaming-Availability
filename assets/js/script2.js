@@ -27,7 +27,7 @@ fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + s
 		const id = item.imdbId
 		const stream = item.streamingInfo.us;
 		movie.addClass("item-card")
-        movie.innerHTML = '<img src=' + poster + '></img><h4>'+name+'</h4> <h4>'+rating+'</h4><a href = "https://www.imdb.com/title/'+id + '" target = "_blank">See on IMDB</a>'
+        movie.innerHTML = '<img src=' + poster + '></img><h4>'+name+'</h4> <h6>'+rating+'</h6><a href = "https://www.imdb.com/title/'+id + '" target = "_blank">See on IMDB</a>'
 
 	// 	for (var key in stream) {
 	// 	console.log(key)
