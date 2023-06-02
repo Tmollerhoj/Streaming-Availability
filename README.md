@@ -23,7 +23,7 @@ N/A
 
 The deployed application should look something like this:
 
-<!-- ![Screenshot of the application.](link screenshot) -->
+![Screenshot of the application.](./assets/screenshot.png)
 
 Click [here](https://tmollerhoj.github.io/Streaming-Availability/) for the deployed application.
 
