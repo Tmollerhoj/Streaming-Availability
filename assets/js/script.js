@@ -13,7 +13,7 @@ function SearchFormSubmit(event) {
 	var search = searchField.value;
 
 
-
+	//fetch data from streaming availability api
 	fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + search + '&country=us&output_language=en', {
 		method: 'GET',
 		headers: {
@@ -22,7 +22,7 @@ function SearchFormSubmit(event) {
 		}
 	})
 
-
+		
 		.then(response => response.json())
 		.then(data => {
 			console.log("data",data)
@@ -41,7 +41,7 @@ function SearchFormSubmit(event) {
 				const stream = item.streamingInfo.us;
 				var icons = "";
 				for (var key in stream) {
-
+					//for each streaming service, make a button that links to that service's movie page
 					if (key == "apple") {
 						let appleLink = item.streamingInfo.us.apple[0].link
 						let appleText = `<a href = "${appleLink}"> <button class="cyan darken-3">Apple</button></a>`
@@ -76,7 +76,7 @@ function SearchFormSubmit(event) {
 					}
 
 				}
-
+				//creates a card containing the poster, name, rating, and links for IMDB and various sites to watch.
 				var movie = `<div class = "item-card"><img src="${poster}"> <h4>${name}</h4> <h6>${rating}</h6><a href = "https://www.imdb.com/title/${id}" target = "_blank">See on IMDB</a> <div>${icons}</div> </div>`
 
 				document.querySelector('.movies').innerHTML += movie;
