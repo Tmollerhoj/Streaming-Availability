@@ -1,10 +1,19 @@
 var searchBarEl = document.querySelector('#search-bar');
-var itemCard = document.querySelector('.item-card')
+var selectSearch = document.querySelector('#movie-select')
+//var itemCard = document.querySelector('.item-card')
+var historyList = document.querySelector("#movie-select")
+var moviesEl=document.querySelector(".movies")
+var searchField=document.querySelector('#search-input')
+
 function SearchFormSubmit(event) {
 	event.preventDefault();
 
+	moviesEl.innerHTML = ''
 
-	var search = document.querySelector('#search-input').value;
+	var search = searchField.value;
+
+
+
 	fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + search + '&country=us&output_language=en', {
 		method: 'GET',
 		headers: {
@@ -16,20 +25,19 @@ function SearchFormSubmit(event) {
 
 		.then(response => response.json())
 		.then(data => {
-			console.log(data)
+			console.log("data",data)
 			const list = data.result;
-
 			var searchOption = `<option value=${search}">${search}</option>`
 
 			document.querySelector('#movie-select').innerHTML += searchOption;
+			
 			addToLocalStorage(search)
 
-			list.map((item) => {
+			for(let item of list){
 				const name = item.title;
 				const poster = item.posterURLs[185];
 				const rating = item.imdbRating;
 				const id = item.imdbId
-
 				const stream = item.streamingInfo.us;
 				var icons = "";
 				for (var key in stream) {
@@ -73,18 +81,15 @@ function SearchFormSubmit(event) {
 
 				document.querySelector('.movies').innerHTML += movie;
 
-			})
+			}
 
-		}
-		)
+		})
 }
 
-// document.querySelector('.movies').innerHTML = ''	})
-
-
 const renderLocalStorageHistory = () => {
-	const historyListEl = document.getElementById("history-list")
+	const historyListEl = document.getElementById("movie-select")
 	let local = localStorage.getItem("history")
+	console.log(local)
 	let history
 	if (local) {
 		history = JSON.parse(local)
@@ -96,10 +101,21 @@ const renderLocalStorageHistory = () => {
 	optionEl.innerText = "---";
 	optionEl.value = "";
 	historyListEl.appendChild(optionEl)
+	let array = Object.keys(history)
+	console.log(array)
+	for (let element of array) {
+		if (element == "") {
+			continue
+		}
+		const optionEl = document.createElement("option")
+		optionEl.innerText = element
+		optionEl.value = element
+		historyListEl.appendChild(optionEl)
 
+	}
 }
 const addToLocalStorage = (movieName) => {
-	let local = localStorage.getItem("history")
+	let local = localStorage.getItem("history") //get the old history 
 	let history
 	if (local) {
 		history = JSON.parse(local)
@@ -112,11 +128,12 @@ const addToLocalStorage = (movieName) => {
 
 }
 
-function searchHistory(event) {
-	event.preventDefault()
-	let movieName = document.getElementById("history-list").value.trim()
-	fetchMovie(movieName)
+function handleHistoryChange(event) {
+	let value = event.target.value
+	document.getElementById("search-input").value = value
 }
 
 
 searchBarEl.addEventListener('submit', SearchFormSubmit);
+historyList.addEventListener('change', handleHistoryChange)
+renderLocalStorageHistory()
