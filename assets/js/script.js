@@ -45,25 +45,25 @@ function SearchFormSubmit(event) {
 					//for each streaming service, make a button that links to that service's movie page
 					if (key == "apple") {
 						let appleLink = item.streamingInfo.us.apple[0].link
-						let appleText = `<a href = "${appleLink}"> <button class="cyan darken-3">Apple</button></a>`
+						let appleText = `<a href = "${appleLink}" target="_blank"> <button class="cyan darken-3">Apple</button></a>`
 						icons += appleText;
 
 					}
 					else if (key == "hbo") {
 						let hboLink = item.streamingInfo.us.hbo[0].link
-						let hboText = `<a href = "${hboLink}"> <button class="cyan darken-3">MAX</button></a>`
+						let hboText = `<a href = "${hboLink}" target="_blank"> <button class="cyan darken-3">MAX</button></a>`
 						icons += hboText;
 
 					}
 					else if (key == "hulu") {
 						let huluLink = item.streamingInfo.us.hulu[0].link
-						let huluText = `<a href = "${huluLink}"> <button class="cyan darken-3">Hulu</button></a>`
+						let huluText = `<a href = "${huluLink}" target="_blank"> <button class="cyan darken-3">Hulu</button></a>`
 						icons += huluText;
 
 					}
 					else if (key == "prime") {
 						let primeLink = item.streamingInfo.us.prime[0].link
-						let primeText = `<a href = "${primeLink}"> <button class="cyan darken-3">Prime</button></a>`
+						let primeText = `<a href = "${primeLink}" target="_blank"> <button class="cyan darken-3">Prime</button></a>`
 						icons += primeText;
 
 					}
