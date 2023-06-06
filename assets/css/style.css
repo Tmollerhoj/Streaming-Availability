@@ -91,3 +91,7 @@ h6::after {
 a {
     color: var(--light-teal);
 }
+
+#top100 {
+    align-items: center;
+}
