@@ -4,6 +4,7 @@ var selectSearch = document.querySelector('#movie-select')
 var historyList = document.querySelector("#movie-select")
 var moviesEl=document.querySelector(".movies")
 var searchField=document.querySelector('#search-input')
+var top100El = document.querySelector('#top100');
 
 function SearchFormSubmit(event) {
 	event.preventDefault();
@@ -86,6 +87,45 @@ function SearchFormSubmit(event) {
 		})
 }
 
+function top100 (event) {
+	event.preventDefault();
+
+	moviesEl.innerHTML = ''
+
+	var search = searchField.value;
+
+fetch('https://imdb-top-100-movies.p.rapidapi.com/', {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '9d90a6c0a4mshd6e2219c374ff2cp1212a2jsnf0f6d6f9d738',
+		'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
+	}
+	})
+
+.then(response => response.json())
+.then(data => {
+	console.log("data",data)
+	const list = data;
+	var searchOption = `<option value=${search}">${search}</option>`
+
+	document.querySelector('#movie-select').innerHTML += searchOption;
+	
+	addToLocalStorage(search)
+
+	for(let item of list){
+		const name = item.title;
+		const poster = item.image;
+		const rating = item.rating;
+		const id = item.imdbid;
+
+		//creates a card containing the poster, name, rating, and links for IMDB and various sites to watch.
+		var movie = `<div class = "item-card"><img src="${poster}"> <h4>${name}</h4> <h6>${rating}</h6><a href = "https://www.imdb.com/title/${id}" target = "_blank">See on IMDB</a></div>`
+
+		document.querySelector('.movies').innerHTML += movie;
+	}
+	})
+};
+
 const renderLocalStorageHistory = () => {
 	const historyListEl = document.getElementById("movie-select")
 	let local = localStorage.getItem("history")
@@ -135,5 +175,6 @@ function handleHistoryChange(event) {
 
 
 searchBarEl.addEventListener('submit', SearchFormSubmit);
-historyList.addEventListener('change', handleHistoryChange)
-renderLocalStorageHistory()
+historyList.addEventListener('change', handleHistoryChange);
+renderLocalStorageHistory();
+top100El.addEventListener('click', top100);
